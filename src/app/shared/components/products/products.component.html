@@ -1,0 +1,104 @@
+<div class="products--grid">
+  <app-product
+    [product]="product"
+    *ngFor="let product of products"
+    (addedProduct)="onAddToShoppingCart($event)"
+    (showProduct)="onShowDetail($event)"
+  ></app-product>
+</div>
+<div class="button-more">
+  <button (click)="onLoadMore()">Load more</button>
+</div>
+<div class="product-detail" [class.active]="showProductDetail" *ngIf="user">
+  {{ statusDetail }}
+  <div *ngIf="productChosen">
+    <button (click)="toggleProductDetail()">Close</button>
+    <h1>{{ productChosen.title }}</h1>
+    <swiper [slidesPerView]="1">
+      <ng-template swiperSlide *ngFor="let img of productChosen.images">
+        <img [src]="img" alt="" />
+      </ng-template>
+    </swiper>
+    <p>{{ productChosen.description }}</p>
+  </div>
+  <div *ngIf="user.role === 'admin'">
+    <button class="btn" (click)="deleteProduct()">Eliminar</button>
+  </div>
+  <div class="input-group" *ngIf="user">
+    <div *ngIf="user.role === 'admin'">
+      <div *ngIf="user.role === 'admin'"></div>
+      <form (ngSubmit)="updateProduct(formTemplate)" #formTemplate="ngForm">
+        <div class="form-group">
+          <label for="input_name" class="row1">Nombre</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input1"
+              name="nombre"
+              ngModel
+              placeholder="Nombre"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="input_description" class="row2">Descripcion</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input2"
+              name="description"
+              ngModel
+              placeholder="Descripcion"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="input_description" class="row3">URL imagen</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input3"
+              name="URLimg"
+              ngModel
+              placeholder="Url de imagen"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="input_description" class="row4">Precio</label>
+          <div>
+            <input
+              type="number"
+              class="form-control"
+              id="input4"
+              name="precio"
+              ngModel
+              placeholder="precio"
+            />
+          </div>
+        </div>
+        <div>
+          <select name="categoria" class="categoria form-control">
+            <option selected>Categoria</option>
+            <option
+              *ngFor="let item of categories"
+              [value]="['/category', item.id]"
+            >
+              {{ item.name }}
+            </option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="update btn btn-success"
+          [disabled]="!formTemplate.form.valid"
+        >
+          actualizar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+*:root{
+  --Azul_oscuro: #0A4D68;
+  --Azul_oscuro_sec: #088395;
+  --Azul_primario: #05BFDB;
+  --Azul_primario_neon: #00FFCA;
+  --White_Backgroud: #f8f7ee;
+  --background_oscuro: #0b231e;
+
+}
+
+.card{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  position: fixed;
+
+
+}
+
+.card svg{
+  margin-top: 190px;
+  z-index: -1;
+  position: static;
+  height: 90vh;
+  justify-self: center;
+}
+.main-login{
+  grid-column: 2/3;
+}
+.parrafo{
+  color: #f8f7ee;
+}
+
+.tittle-login{
+  color:#00FFCA;
+  font-size: 45px;
+  grid-row: 1/2;
+  text-align: center;
+  font-weight: bold;
+}
+.main-login p{
+  margin-top: 35px;
+  font-size: 30px;
+  text-align: center;
+}
+.form-group {
+  margin-top: 20px;
+  text-align: center;
+  color: #00FFCA;
+  font-size: 30px;
+}
+.form-control{
+  margin-top: 15px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 40px;
+  height: 40px;
+  border: 1px solid #00FFCA;
+
+}
+.flex{
+  display: flex;
+  justify-content: center;
+}
+.btn{
+  background-color: #05BFDB;
+
+  height: 50px;
+  width:150px;
+  border-radius: 40px;
+  font-size: 24px ;
+  color: #f8f7ee;
+  text-align: center;
+  margin-top: 50px ;
+  border: 1px solid #f8f7ee;
+}
+.logo-uno{
+  width: 290px;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+.logo-dos{
+  width: 290px;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 1200px;
+}
+.flex button:hover{
+  background-color: #088395;
+}
+.flex button:active{
+  background-color: #05BFDB;
+}
+.p-login{
+  margin-top: 27px;
+  color: #f8f7ee;
+}
+.p-login a{
+  margin-left: 15px;
+  text-decoration: none;
+  color:#05BFDB;
+  background-color: #f8f7ee;
+  border-radius: 10px;
+}
+.p-login a:hover{
+  color:#f8f7ee;
+  background-color:#00FFCA;
+}
+
+.logo{
+  width: 190px;
+  height: 30px;
+}
+
+

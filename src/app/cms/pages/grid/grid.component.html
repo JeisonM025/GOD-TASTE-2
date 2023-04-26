@@ -1,0 +1,89 @@
+<div class="products-main">
+  <div class="group-input">
+    <div class="nuevo">
+      <div class="tittle">
+        <h2>Nuevo Producto</h2>
+      </div>
+
+      <form (ngSubmit)="createNewProduct(f)" #f="ngForm">
+        <div class="form-control">
+          <label for="input_name" class="row1">Nombre</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input1"
+              name="nombre"
+              ngModel
+              placeholder="Nombre del producto"
+            />
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="input_name" class="row2">Descripcion</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input2"
+              name="descripcion"
+              ngModel
+              placeholder="Descripcion del producto"
+            />
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="input_name" class="row4">Imagen del producto</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input4"
+              name="url"
+              ngModel
+              placeholder="Url de la imagen"
+            />
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="input_name" class="row3">Precio</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input3"
+              name="precio"
+              ngModel
+              placeholder="Precio del producto"
+            />
+          </div>
+        </div>
+        <div class="flex">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!f.form.valid"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div class="container-table">
+    <table class="tabla">
+      <tr class="inicio">
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>.</th>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.price }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

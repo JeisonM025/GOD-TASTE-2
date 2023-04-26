@@ -1,0 +1,63 @@
+*:root{
+  --Azul_oscuro: #0A4D68;
+  --Azul_oscuro_sec: #088395;
+  --Azul_primario: #05BFDB;
+  --Azul_primario_neon: #00FFCA;
+  --White_Backgroud: #f8f7ee;
+  --background_oscuro: #0b231e;
+
+}
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: fixed;
+
+}
+.logo-uno{
+  width: 290px;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+.logo-dos{
+  width: 290px;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 1200px;
+}
+.profile{
+  margin-top: 100px;
+  grid-column: 2/3;
+  justify-self: center;
+
+}
+.profile h1{
+  text-align: center;
+  font-size: 40px;
+  color:#00FFCA ;
+}
+.profile p{
+  text-align: center;
+  font-size: 30px;
+  color: #f8f7ee;
+}
+svg{
+  margin-top: 200px;
+  z-index: -1;
+  position: static;
+  height: 90vh;
+  justify-self: center;
+}
+.profile a{
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  margin-left: 50px;
+  color: #00FFCA;
+}
+.profile a:hover{
+  color: #05BFDB;
+}
+.profile a:active{
+  color: #088395;
+}

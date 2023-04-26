@@ -1,0 +1,38 @@
+<div class="card">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,192L30,165.3C60,139,120,85,180,53.3C240,21,300,11,360,37.3C420,64,480,128,540,154.7C600,181,660,171,720,176C780,181,840,203,900,186.7C960,171,1020,117,1080,90.7C1140,64,1200,64,1260,90.7C1320,117,1380,171,1410,197.3L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+  <img class="logo-uno" src="../../../../assets/logo sin fondo.png" alt="">
+  <img class="logo-dos" src="../../../../assets/logo sin fondo.png" alt="">
+  <div class="main-login" >
+
+  <div class="main-login">
+    <h2 class="tittle-login">Registrarte</h2>
+    <p>Ingresa tus datos</p>
+    <form (ngSubmit)="registro(register)" #register="ngForm">
+      <div class="form-group">
+        <label for="input_name" class="row1">Nombre</label>
+        <div>
+          <input type="text" class="form-control" id="input1" name="nombre" ngModel placeholder="Nombre">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="input_description" class="row2" >Email</label>
+        <div>
+          <input type="email" class="form-control" id="input2" name="Email" ngModel placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="input_description" class="row2" >contraseña</label>
+        <div>
+          <input type="password" class="form-control" id="input3" name="contraseña" ngModel placeholder="Contraseña">
+        </div>
+      </div>
+      <div class="flex">
+      <button  type="submit" class="btn btn-success" [disabled]="!register.form.valid">
+        Guardar usuario
+      </button>
+    </div>
+    </form>
+    <div class="p-login">
+    <p>¿Ya tienes cuenta?<a routerLink="../login">Ingresa</a></p>
+  </div>
+  </div>

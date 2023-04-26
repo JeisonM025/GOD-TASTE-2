@@ -1,0 +1,89 @@
+<div class="products-main">
+  <div class="group-input">
+    <div class="nuevo">
+      <div class="tittle">
+        <h2>Nuevo Usuario</h2>
+      </div>
+
+      <form (ngSubmit)="createNewUser(f)" #f="ngForm">
+        <div class="form-control">
+          <label for="input_name" class="row1">Nombre</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input1"
+              name="nombre"
+              ngModel
+              placeholder="Nombre de usuario"
+            />
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="input_name" class="row2">Email</label>
+          <div>
+            <input
+              type="email"
+              class="form-control"
+              id="input2"
+              name="email"
+              ngModel
+              placeholder="Email de usuario"
+            />
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="input_name" class="row4">Contraseña</label>
+          <div>
+            <input
+              type="password"
+              class="form-control"
+              id="input4"
+              name="contraseña"
+              ngModel
+              placeholder="Contraseña"
+            />
+          </div>
+        </div>
+        <div class="form-control">
+          <label for="input_name" class="row3">Rol</label>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="input3"
+              name="rol"
+              ngModel
+              placeholder="Rol de usuario"
+            />
+          </div>
+        </div>
+        <div class="flex">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!f.form.valid"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container-table">
+    <table class="tabla">
+      <tr class="inicio">
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
