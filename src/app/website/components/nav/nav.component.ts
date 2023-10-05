@@ -13,7 +13,7 @@ import { Category } from '../../../models/category.model';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  isLoggedIn: boolean = false; // Declaración de isLoggedIn
   activeMenu = false;
   counter = 0;
   profile: User | null = null;
@@ -40,6 +40,7 @@ export class NavComponent implements OnInit {
   toggleMenu() {
     this.activeMenu = !this.activeMenu;
   }
+
 
   login() {
     this.router.navigate(['/login']);

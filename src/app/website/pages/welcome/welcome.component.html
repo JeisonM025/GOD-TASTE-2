@@ -1,0 +1,86 @@
+<div class="welcome-container">
+  <!-- Carrusel de imágenes de presentación -->
+  <div class="carousel">
+    <div
+      class="slide"
+      *ngFor="let image of images; let i = index"
+      [ngClass]="{ active: i === currentIndex }"
+    >
+      <img [src]="image.src" alt="Slide {{ i + 1 }}" />
+    </div>
+  </div>
+
+  <!-- Controles del carrusel -->
+  <div class="carousel-controls">
+    <a class="prev" (click)="prevSlide()">&#10094;</a>
+    <a class="next" (click)="nextSlide()">&#10095;</a>
+  </div>
+
+  <!-- Información de contacto y ubicación del local -->
+  <div class="contact">
+    <hr>
+  <!-- Foto del equipo de trabajo y breve descripción -->
+  <div class="team">
+    <img src="" alt="Equipo de trabajo" />
+  </div>
+  <div class="team-description">
+    <p>Breve descripción del equipo de trabajo...</p>
+  </div>
+</div>
+  <hr>
+
+
+    <h2>Reparaciones</h2>
+    <img class="img_title" src="https://cdn-icons-png.flaticon.com/512/2760/2760290.png" alt="Logo reparacion">
+    <p>
+      Reparaciones de telefonos, computadores cotizaciones
+      <a class="whatsApp" href="">aqui</a>
+    </p>
+<hr>
+    <img class="img_title" src="https://cdn-icons-png.flaticon.com/512/4437/4437635.png" alt="Logo productos">
+    <P>Conoce nuestros productos <a href="home">aqui</a></P>
+
+    <hr>
+
+    <!-- Mapa de Google Maps -->
+    <div class="google-map">
+      <h2>Ubicados en Suesa Cundinamarca</h2>
+      <!-- Mapa de Google Maps -->
+      <div class="google-map">
+        <iframe
+          width="100%"
+          height="400"
+          frameborder="0"
+          style="border: 0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyChaOipJcXqmhrYy_lcY1Z6xxvna1mH7Aw&q=Comercializadora+Llevemas,+Cra.+4A,+Suesca,+Cundinamarca"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+    <hr>
+    <div class="contact-info">
+
+      <h2>Contacto
+        <img class="imgg" src="https://cdn-icons-png.flaticon.com/256/5772/5772875.png" alt="img">
+      </h2>
+      
+      <a href="https://www.facebook.com/" class="social-button facebook">
+        <img src="https://www.pngarts.com/files/16/Splash-Facebook-Icon-X-PNG.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/" class="social-button instagram">
+        <img src="https://freepngimg.com/thumb/instagram/118546-logo-instagram-free-hd-image.png" alt="Instagram">
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola%20" class="social-button whatsapp">
+        <img src="https://www.pngmart.com/files/22/WhatsApp-Logo-Background-Isolated-PNG.png" alt="WhatsApp">
+      </a>
+    </div>
+    
+    
+  </div>
+
+
+<!-- Footer -->
+<footer>
+  <p>© 2023 Creado por Jeison Malagon</p>
+</footer>

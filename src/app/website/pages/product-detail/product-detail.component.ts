@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
-import { Product } from '../../../models/product.model'
+import { Product } from '../../../models/product.model';
 import { ProductsService } from '../../../services/products.service';
 
 @Component({
@@ -11,8 +11,7 @@ import { ProductsService } from '../../../services/products.service';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
-
+export class ProductDetailComponent {
   productId: string | null = null;
   product: Product | null = null;
 
@@ -41,5 +40,4 @@ export class ProductDetailComponent implements OnInit {
   goToBack() {
     this.location.back();
   }
-
 }

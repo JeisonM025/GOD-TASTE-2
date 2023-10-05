@@ -1,18 +1,18 @@
 <div class="header">
   <header>
-    <h3>Controlador administrador</h3>
-    <button> <a routerLink="../profile">Salir</a>  </button>
+      <h3>Controlador administrador</h3>
+      <!-- Botón de hamburguesa para dispositivos móviles -->
+      <a class="mobile-menu" (click)="toggleMenu()" *ngIf="isMobileView">
+        &#9776;
+    </a>
+      <ul class="nav" [ngClass]="{'active': isMenuOpen}">
+          <li><a routerLink="../profile">Salir</a></li>
+          <li><a routerLink="grid">Productos</a></li>
+          <li><a routerLink="tasks">Usuarios</a></li>
+          <li><a routerLink="estadisticas">Estadísticas</a></li>
+      </ul>
   </header>
-  <nav >
-    <ul>
-      <li><a routerLink="grid">Productos</a></li>
-      <hr >
-      <li><a routerLink="tasks">Usuarios</a></li>
-      <hr>
-      <li><a routerLink="estadisticas">estadisticas</a></li>
-    </ul>
-  </nav>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
+</div>
+<div class="main">
+  <router-outlet></router-outlet>
 </div>

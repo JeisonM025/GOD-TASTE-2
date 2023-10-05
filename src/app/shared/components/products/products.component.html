@@ -26,7 +26,6 @@
   </div>
   <div class="input-group" *ngIf="user">
     <div *ngIf="user.role === 'admin'">
-      <div *ngIf="user.role === 'admin'"></div>
       <form (ngSubmit)="updateProduct(formTemplate)" #formTemplate="ngForm">
         <div class="form-group">
           <label for="input_name" class="row1">Nombre</label>

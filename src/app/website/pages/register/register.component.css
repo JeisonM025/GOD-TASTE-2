@@ -1,109 +1,89 @@
-*:root{
-  --Azul_oscuro: #0A4D68;
-  --Azul_oscuro_sec: #088395;
-  --Azul_primario: #05BFDB;
-  --Azul_primario_neon: #00FFCA;
-  --White_Backgroud: #f8f7ee;
-  --background_oscuro: #0b231e;
-
-}
-.card{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  position: fixed;
-
-}
-.card svg{
-  margin-top: 130px;
-  z-index: -1;
-  position: static;
-  height: 90vh;
-  justify-self: center;
-}
-.main-login{
-  grid-column: 2/3;
-
-
-}
-.tittle-login{
-  color: #00FFCA;
-  font-size: 45px;
-  grid-row: 1/2;
-  text-align: center;
-  font-weight: bold;
-}
-.main-login p{
-  color: #f8f7ee;
-}
-.main-login p{
-  margin-top: 5px;
-  font-size: 30px;
-  text-align: center;
-}
-.form-group {
-  margin-top: 27px;
-  text-align: center;
-  color: #00FFCA;
-  font-size: 30px;
-}
-.form-control{
-  margin-top: 10px;
-  font-size: 30px;
-  text-align: center;
-  border-radius: 40px;
-  height: 40px;
-  border: 1px solid #00FFCA;
-
-}
-.logo-uno{
-  width: 290px;
-  position: absolute;
-  margin-top: 100px;
-  margin-left: 100px;
-}
-.logo-dos{
-  width: 290px;
-  position: absolute;
-  margin-top: 100px;
-  margin-left: 1200px;
-}
-.flex{
+/* Estilos generales */
+.container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.btn{
-  background-color: #05BFDB;
 
-  height: 50px;
-  width:250px;
-  border-radius: 40px;
-  font-size: 24px ;
-  color: #f8f7ee;
-  text-align: center;
-  margin-top: 30px ;
-  border: 1px solid #f8f7ee;
-}
-.flex button:hover{
-  background-color: #088395;
-}
-.flex button:active{
-  background-color: #05BFDB;
-}
-.p-login{
-  margin-top: 47px;
-  color: #f8f7ee;
-}
-.p-login a{
-  margin-left: 15px;
-  text-decoration: none;
-  color:#05BFDB;
-  background-color: #f8f7ee;
+.card {
+  background-color: #fff;
   border-radius: 10px;
-}
-.p-login a:hover{
-  color:#f8f7ee;
-  background-color:#00FFCA;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
 }
 
+.title-login {
+  font-size: 24px;
+  color: #0099ff; /* Color principal */
+  text-align: center;
+  margin-bottom: 20px;
+}
 
+.registration-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px; /* Tamaño de la imagen */
+}
+
+/* Estilos de formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  color: #0099ff; /* Color principal */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.password-description {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Estilos de botón */
+.btn-success {
+  background-color: #0099ff; /* Color principal */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-success:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Estilos de enlace */
+.p-login {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.p-login a {
+  color: #0099ff; /* Color principal */
+  text-decoration: none;
+}
+
+.p-login a:hover {
+  text-decoration: underline;
+}

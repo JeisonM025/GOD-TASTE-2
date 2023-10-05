@@ -1,17 +1,20 @@
-<div>
-<div>
-  <h2>Grafica Roles de usuarios</h2>
+<div class="container">
+  <div class="header">
+    <header>
+      <h3>Controlador administrador</h3>
+    </header>
+  </div>
+  <div class="content">
+    <div class="chart-container">
+      <h2>Grafica Roles de usuarios</h2>
+      <canvas baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLengend"
+        [type]="'bar'">
+      </canvas>
+    </div>
+  </div>
 </div>
-<canvas baseChart
-  [data]="barChartData"
-  [options]="barChartOptions"
-  [plugins]="barChartPlugins"
-  [legend]="barChartLengend"
-  [type]="'bar'">
 
-</canvas>
-</div>
-<div>
-
-
-</div>

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { User } from '../../../models/user.model';
@@ -12,46 +12,45 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   counter = 0;
   profile: User | null = null;
+  loginError = '';
 
   @Output() loadMore = new EventEmitter();
 
-
   constructor(
-
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.authService.user$
-    .subscribe(data => {
+    this.authService.user$.subscribe(data => {
       this.profile = data;
-    })
-  }
-  // saveData(form:NgForm){
-  //   console.log(form.value)
-  // }
-
-
-  login(form:NgForm) {
-    this.authService.loginAndGet(
-      `${form.value.Email}`,
-      `${form.value.contraseña}`,
-
-      // 'admin@mail.com',
-      // 'admin123'
-    )
-    .subscribe(() => {
-      this.router.navigate(['/profile']);
     });
   }
 
+  login(form: NgForm) {
+    // Reiniciar el mensaje de error
+    this.loginError = '';
+
+    if (form.invalid) {
+      // Formulario no válido, no intentar iniciar sesión
+      return;
+    }
+
+    this.authService.loginAndGet(form.value.Email, form.value.password).subscribe(
+      () => {
+        this.router.navigate(['/profile']);
+      },
+      (error) => {
+        // Manejar el error de inicio de sesión aquí
+        this.counter++;
+        this.loginError = 'El correo o contraseña ingresados son incorrectos.';
+      }
+    );
+  }
 
   logout() {
     this.authService.logout();
     this.profile = null;
     this.router.navigate(['/home']);
   }
-
 }
-

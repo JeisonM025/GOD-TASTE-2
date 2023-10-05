@@ -1,66 +1,87 @@
-*:root{
-  --Azul_oscuro: #0A4D68;
-  --Azul_oscuro_sec: #088395;
-  --Azul_primario: #05BFDB;
-  --Azul_primario_neon: #00FFCA;
-  --White_Backgroud: #f8f7ee;
-  --background_oscuro: #0b231e;
-
-}
-
-.card-product{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #59bfcf;
-  border-radius: 10px;
-}
-.link-product{
-  margin-top: 10px;
-}
-p, h2 {
+/* Estilos generales */
+body {
   margin: 0;
-  font-size: 18px;
-  font-weight: 500;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
 
+/* Estilos del encabezado (nav) */
+nav {
+  background-color: #0099ff;
+  padding: 10px 0; /* Agrega espacio arriba y abajo del nav */
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px; /* Separación desde la parte inferior del nav */
 }
-.title {
-  font-weight: bold;
-}
-.img{
-  margin-top: 10px;
-}
-.category {
-  font-style: italic;
-  color: #f8f7ee;
 
+/* Estilos de la grilla */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas responsivas */
+  gap: 20px; /* Espacio entre las cards */
+  padding: 20px; /* Agrega espacio alrededor de la grilla */
 }
-.detalle{
-  font-size: 17px;
-  font-weight: bold;
+
+/* Estilos de la card */
+.card-product {
+  margin-top: 30px;
+  background-color: #0099ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  transition: background-color 0.3s ease;
+ 
+}
+
+.card-product:hover {
+  background-color: #0077cc;
+}
+
+/* Estilos de la imagen */
+.img {
+  display: block;
+  margin: 0 auto;
+  width: 100%; /* Ancho fijo al 100% del contenedor */
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Mantiene la proporción de la imagen y la ajusta al tamaño de la card */
+}
+
+/* Estilos del contenido */
+.product-details {
+  padding-top: 20px;
+}
+
+/* Estilos para el hipervínculo "Ver detalle" */
+.detalle {
+  display: inline-block;
   text-decoration: none;
-  color: rgb(54, 16, 16);
-  margin-bottom: 10px;
-}
-.detalle:hover{
-  color:#0A4D68
-}
-.add{
-  background-color: #f8f7ee;
-  color: #05BFDB;
-  height: 25px;
-  font-size: 17px;
+  background-color: #0077cc;
+  color: #fff;
+  padding: 5px 10px;
   border-radius: 5px;
-  border: none;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.add:hover{
-  background-color: #05BFDB ;
-  color: #f8f7ee;
+
+.detalle:hover {
+  background-color: #0055aa;
 }
-.add:active{
-  background-color: #f8f7ee;
-  color: #05BFDB;
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  .card-product {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .category {
+    font-size: 14px;
+  }
 }

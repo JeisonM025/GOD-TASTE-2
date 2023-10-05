@@ -1,63 +1,83 @@
-*:root{
-  --Azul_oscuro: #0A4D68;
-  --Azul_oscuro_sec: #088395;
-  --Azul_primario: #05BFDB;
-  --Azul_primario_neon: #00FFCA;
-  --White_Backgroud: #f8f7ee;
-  --background_oscuro: #0b231e;
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
-.container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  position: fixed;
 
+.logo {
+  max-width: 100px;
+  margin-bottom: 20px;
 }
-.logo-uno{
-  width: 290px;
-  position: absolute;
-  margin-top: 100px;
-  margin-left: 100px;
-}
-.logo-dos{
-  width: 290px;
-  position: absolute;
-  margin-top: 100px;
-  margin-left: 1200px;
-}
-.profile{
-  margin-top: 100px;
-  grid-column: 2/3;
-  justify-self: center;
 
-}
-.profile h1{
+/* Estilos del perfil */
+.profile {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
-  font-size: 40px;
-  color:#00FFCA ;
+  width: 100%;
+  max-width: 400px;
 }
-.profile p{
-  text-align: center;
-  font-size: 30px;
-  color: #f8f7ee;
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
-svg{
-  margin-top: 200px;
-  z-index: -1;
-  position: static;
-  height: 90vh;
-  justify-self: center;
+
+.profile-picture {
+  max-width: 150px;
+  border-radius: 50%;
 }
-.profile a{
-  text-align: center;
+
+.profile h1 {
+  font-size: 24px;
+  color: #0099ff;
+  margin-top: 10px;
+}
+
+.profile-info {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.profile-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #0099ff;
   text-decoration: none;
-  font-size: 30px;
-  margin-left: 50px;
-  color: #00FFCA;
 }
-.profile a:hover{
-  color: #05BFDB;
+
+.profile-link:hover {
+  text-decoration: underline;
 }
-.profile a:active{
-  color: #088395;
+
+/* Estilos para la carga de la foto de perfil */
+.file-input {
+  display: none;
 }
+
+.file-label {
+  cursor: pointer;
+  color: #0099ff;
+  text-decoration: underline;
+}
+
+.file-label:hover {
+  text-decoration: none;
+}
+

@@ -1,58 +1,102 @@
-*:root{
-  --Azul_oscuro: #0A4D68;
-  --Azul_oscuro_sec: #088395;
-  --Azul_primario: #05BFDB;
-  --Azul_primario_neon: #00FFCA;
-  --White_Backgroud: #f8f7ee;
-  --background_oscuro: #0b231e;
-
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
+
 .page-product {
-  padding: 0 3em;
-}
-.page-product button{
-  background-color: #05BFDB;
-  border: none;
-  border-radius: 10px;
-  height: 30px;
-  width: 100px;
-  color: #f8f7ee;
-  font-size: 20px;
-}
-.page-product .detail {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-}
-.page-product .detail .gallery {
-  overflow:hidden;
-  width: 100%;
-}
-.page-product .detail h2, .page-product .detail h1 {
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 30px;
-  margin-top:15px ;
-}
-.img{
-  margin-top: 30px;
-  border-radius: 30px;
-}
-.page-product .detail h2 {
-  font-size: 15px;
-}
-@media screen and (max-width: 640px) {
-  .page-product .detail{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.text{
-  color: #f8f7ee;
+.back-button {
+  background-color: #0099ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
-.neon{
-  color: #00FFCA;
+
+.back-button:hover {
+  background-color: #0077cc;
+}
+
+/* Estilos del detalle del producto */
+.detail {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.gallery {
+  margin-bottom: 20px;
+}
+
+.gallery img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.text h1 {
+  font-size: 24px;
+  color: #0099ff;
+  margin-bottom: 10px;
+}
+
+.text h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.text p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Estilos para la carga de la imagen del producto */
+.file-input {
+  display: none;
+}
+
+.file-label {
+  cursor: pointer;
+  color: #0099ff;
+  text-decoration: underline;
+}
+
+.file-label:hover {
+  text-decoration: none;
+}
+
+.upload-button {
+  background-color: #0099ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.upload-button:hover {
+  background-color: #0077cc;
 }

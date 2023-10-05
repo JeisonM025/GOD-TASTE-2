@@ -17,6 +17,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { FormsModule } from '@angular/forms';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 @NgModule({
   declarations: [
     NavComponent,
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     RecoveryComponent,
     ProfileComponent,
     ProductDetailComponent,
-    LayoutComponent
+    LayoutComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,

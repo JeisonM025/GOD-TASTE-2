@@ -1,40 +1,19 @@
-<div class="show-mobile">
-  <div class="nav">
-    <button (click)="toggleMenu()">
-      <img class="hamburger" src="./assets/svg/icon_menu.svg" alt="menu">
+<div class="navbar">
+    <div class="logo">
+      <img src="../../../../assets/LOGO-fotor-bg-remover-202304251367.png" alt="Logo">
+    </div>
+    <button class="hamburger" (click)="toggleMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
     </button>
-    <a class="logo" >
-      <img src="../../../../assets/LOGO-fotor-bg-remover-202304251367.png" alt="">
-    </a>
 
-
-  </div>
-  <div class="side-menu" [class.active]="activeMenu">
-    <button class="button-close" (click)="toggleMenu()">❎Close</button>
-    <ul class="list">
-      <li><a (click)="toggleMenu()" routerLink="home">Productos</a></li>
-
+    <ul class="nav-links" id="nav-links" [ngClass]="{'active': activeMenu}">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="welcome">Bienvenida</a></li>
+      <li><a href="login" *ngIf="!profile; else elseBlock" (click)="login()">Login</a></li>
+        <ng-template #elseBlock>
+          <a class="link-profile" routerLink="/profile">{{ profile?.name }}</a>
+        </ng-template>
+        <li><a  href="#" (click)="logout()">Salir</a></li>
     </ul>
   </div>
-</div>
-<div class="hide-mobile">
-  <div>
-    <nav>
-      <img class="logo" src="../../../../assets/LOGO-fotor-bg-remover-202304251367.png" alt="">
-      <ul>
-        <li><a class="productos" routerLinkActive="active" routerLink="home">Productos</a></li>
-
-      </ul>
-    </nav>
-    <div  class="info">
-      <div class="account">
-        <button *ngIf="!profile; else elseBlock" (click)="login()">Login</button>
-        <ng-template #elseBlock>
-          <a class="link-profile" routerLink="/profile">{{ profile?.email }}</a>
-          <button (click)="logout()" >Salir</button>
-        </ng-template>
-      </div>
-
-    </div>
-  </div>
-</div>
+  

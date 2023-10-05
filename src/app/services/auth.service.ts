@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { switchMap, tap } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { switchMap, tap, catchError } from 'rxjs/operators';
+import { BehaviorSubject, throwError } from 'rxjs';
 
 import { environment } from './../../environments/environment';
 import { Auth } from './../models/auth.model';
@@ -26,30 +26,30 @@ export class AuthService {
   getCurrentUser() {
     const token = this.tokenService.getToken();
     if (token) {
-      this.getProfile()
-      .subscribe()
+      this.getProfile().subscribe();
     }
   }
 
   login(email: string, password: string) {
-    return this.http.post<Auth>(`${this.apiUrl}/login`, {email, password})
-    .pipe(
+    return this.http.post<Auth>(`${this.apiUrl}/login`, { email, password }).pipe(
       tap(response => this.tokenService.saveToken(response.access_token)),
     );
   }
 
   getProfile() {
-    return this.http.get<User>(`${this.apiUrl}/profile`)
-    .pipe(
-      tap(user => this.user.next(user))
+    return this.http.get<User>(`${this.apiUrl}/profile`).pipe(
+      tap(user => this.user.next(user)),
     );
   }
 
   loginAndGet(email: string, password: string) {
-    return this.login(email, password)
-    .pipe(
+    return this.login(email, password).pipe(
       switchMap(() => this.getProfile()),
-    )
+      catchError(error => {
+        // Manejar el error de inicio de sesión aquí
+        return throwError('El correo o contraseña ingresados son incorrectos.');
+      })
+    );
   }
 
   logout() {

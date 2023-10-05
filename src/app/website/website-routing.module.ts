@@ -9,6 +9,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 import { AuthGuard } from './../guards/auth.guard';
 import { ExitGuard } from './../guards/exit.guard';
@@ -33,6 +34,10 @@ const routes: Routes = [
         data: {
           preload: true,
         }
+      },
+      {
+        path: 'welcome',
+        component: WelcomeComponent
       },
       {
         path: 'product/:id',
